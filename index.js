@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 require('dotenv').config();
+const cors = require('cors')
 
 const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
@@ -9,7 +10,7 @@ const PASSWORD = process.env.PASSWORD;
 
 const app = express()
 
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
