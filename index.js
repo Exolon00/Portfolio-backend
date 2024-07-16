@@ -1,7 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
-const { EMAIL, PASSWORD } = require('./env.js')
+require('dotenv').config();
+
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
+
 
 const app = express()
 
